@@ -1,0 +1,726 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>５０代からの安全資産倍増計画　初心者のためのマネーセミナー</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- スクロール進捗バー -->
+    <div id="scroll-progress"></div>
+
+    <!-- 文字サイズ変更ボタン -->
+    <div class="font-size-controls">
+      <span
+        style="
+          font-size: 14px;
+          font-weight: bold;
+          color: #555;
+          margin-right: 3px;
+          align-self: center;
+        "
+        >文字</span
+      >
+      <button onclick="changeFontSize(0)">極小</button>
+      <button onclick="changeFontSize(1)">小</button>
+      <button onclick="changeFontSize(2)" class="active">標準</button>
+      <button onclick="changeFontSize(3)">大</button>
+      <button onclick="changeFontSize(4)">極大</button>
+    </div>
+
+    <!-- ドラッグ可能なメニューボタン -->
+    <div
+      id="draggable-menu-btn"
+      onmousedown="startDrag(event)"
+      ontouchstart="startDrag(event)"
+      onclick="toggleSidebar()"
+    >
+      <span>☰</span>
+      MENU
+    </div>
+
+    <!-- サイドバーオーバーレイ -->
+    <div id="sidebar-overlay" onclick="closeSidebar()"></div>
+
+    <!-- サイドバー -->
+    <nav id="sidebar">
+      <ul>
+        <li><a href="#troubles" onclick="closeSidebar()">💡 お悩み相談</a></li>
+        <li><a href="#solution" onclick="closeSidebar()">💬 参加者の声</a></li>
+        <li>
+          <a href="#features" onclick="closeSidebar()">✨ セミナーの特徴</a>
+        </li>
+        <li><a href="#instructor" onclick="closeSidebar()">👤 講師紹介</a></li>
+        <li><a href="#schedule" onclick="closeSidebar()">📅 日程・会場</a></li>
+        <li><a href="#faq" onclick="closeSidebar()">❓ よくある質問</a></li>
+        <li><a href="#important" onclick="closeSidebar()">⭐ 大切なこと</a></li>
+        <li><a href="#contact" onclick="closeSidebar()">📝 お申込み</a></li>
+      </ul>
+      <button class="sidebar-pos-toggle" onclick="toggleSidebarPos()">
+        ⇄ 左右切替
+      </button>
+    </nav>
+
+    <!-- ヘッダー -->
+    <header>
+      <div class="header-content">
+        <h1>５０代からの安全資産倍増計画</h1>
+        <p
+          style="
+            font-size: clamp(16px, 2.5vw, 32px);
+            font-weight: bold;
+            margin-top: 15px;
+            color: #555;
+          "
+        >
+          初心者のためのマネーセミナー
+        </p>
+        <p style="margin-top: 10px; color: #888; font-size: clamp(12px, 2.5vw, 27px);">
+        参加費無料・勧誘なし・個別相談無料
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <!-- お悩みセクション -->
+      <section id="troubles">
+        <h2 class="animate-on-scroll">こんな事で悩んでませんか？</h2>
+        <div
+          class="card animate-on-scroll"
+
+style="font-size: clamp(16px, 5.0vw, 28px); margin-bottom: 25px; text-align: center"          <p>
+            お金のプロがあなたの不安を解決します
+          </p>
+          <div class="worry-grid">
+            <div
+              class="worry-item animate-on-scroll"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background: #fff9f0;
+                padding: 15px;
+                border-radius: 10px;
+                transition: transform 0.3s;
+                font-size: clamp(16px, 5.0vw, 23px)
+              "
+            >
+              <span style="font-size: 1.5rem; flex-shrink: 0">💡</span>
+              老後のお金っていくらあれば大丈夫？
+            </div>
+            <div
+              class="worry-item animate-on-scroll"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background: #fff9f0;
+                padding: 15px;
+                border-radius: 10px;
+                transition: transform 0.3s;
+                font-size: clamp(16px, 5.0vw, 23px)
+              "
+            >
+              <span style="font-size: 1.5rem; flex-shrink: 0">💡</span>
+              旅行や趣味を楽しむお金の作り方は？
+            </div>
+            <div
+              class="worry-item animate-on-scroll"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background: #fff9f0;
+                padding: 15px;
+                border-radius: 10px;
+                transition: transform 0.3s;
+                font-size: clamp(16px, 5.0vw, 23px)
+              "
+            >
+              <span style="font-size: 1.5rem; flex-shrink: 0">💡</span>
+              NISAは私もやった方がいいの？
+            </div>
+            <div
+              class="worry-item animate-on-scroll"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background: #fff9f0;
+                padding: 15px;
+                border-radius: 10px;
+                transition: transform 0.3s;
+                font-size: clamp(16px, 5.0vw, 23px)
+              "
+            >
+              <span style="font-size: 1.5rem; flex-shrink: 0">💡</span>
+              物価高で家計が厳しくなった
+            </div>
+            <div
+              class="worry-item animate-on-scroll"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background: #fff9f0;
+                padding: 15px;
+                border-radius: 10px;
+                transition: transform 0.3s;
+                font-size: clamp(16px, 5.0vw, 23px)
+              "
+            >
+              <span style="font-size: 1.5rem; flex-shrink: 0">💡</span>
+              自分に合った保険の選び方は？
+            </div>
+            <div
+              class="worry-item animate-on-scroll"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background: #fff9f0;
+                padding: 15px;
+                border-radius: 10px;
+                transition: transform 0.3s;
+                font-size: clamp(16px, 5.0vw, 23px)
+              "
+            >
+              <span style="font-size: 1.5rem; flex-shrink: 0">💡</span>
+              利子で楽しむ生活をしてみたい
+            </div>
+            <div
+              class="worry-item animate-on-scroll"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background: #fff9f0;
+                padding: 15px;
+                border-radius: 10px;
+                transition: transform 0.3s;
+                font-size: clamp(16px, 5.0vw, 23px)
+              "
+            >
+              <span style="font-size: 1.5rem; flex-shrink: 0">💡</span>
+              この年齢からでも資産運用はした方が良い？始め方は？
+            </div>
+            <div
+              class="worry-item animate-on-scroll"
+              style="
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                background: #fff9f0;
+                padding: 15px;
+                border-radius: 10px;
+                transition: transform 0.3s;
+                font-size: clamp(16px, 5.0vw, 23px)
+              "
+            >
+              <span style="font-size: 1.5rem; flex-shrink: 0">💡</span>
+              資産運用を始めたいけど損するのは怖い
+            </div>
+          </div>
+          <p
+            style="
+              text-align: center;
+              font-weight: bold;
+              color: #d35400;
+              font-size:  clamp(16px, 5.0vw, 25px);
+              margin-top: 30px;
+              background: #fff;
+              padding: 15px;
+              border-radius: 50px;
+              font-size: clamp(16px, 5.0vw, 23px)
+            "
+          >
+            そのお悩み、【初心者のためのマネーセミナー】に参加して解決しちゃいませんか？
+          </p>
+        </div>
+      </section>
+
+      <!-- 実績カウンター 数値調整 -->
+      <div class="stats-bar animate-on-scroll">
+        <div class="stat-item">
+          <span class="stat-number" data-target="2000">0</span>
+          <span class="stat-label">世帯以上の相談実績</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="14">0</span>
+          <span class="stat-label">年間に渡る実務経験</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-number" data-target="0">0</span>
+          <!--実績カウンター参加費…オレンジフォントの文字だけここで編集-->
+          <span
+            class="stat-label"
+            style="color: #f39c12; font-weight: bold; font-size: clamp(25px, 3.0vw, 30px);"
+            >参加費・相談費 無料</span>
+        </div>
+      </div>
+
+      <!-- 参加者の声 -->
+      <section id="solution">
+        <h2 class="animate-on-scroll">お金のプロがあなたの不安を解決します</h2>
+        <div class="card animate-on-scroll">
+          <h3 style="font-size: clamp(16px, 5.0vw, 28px); margin-bottom: 25px; text-align: center">
+            セミナー参加者の声
+          </h3>
+          <div class="testimonial-slider">
+            <div class="testimonial-track" id="testimonial-track">
+              <div class="testimonial-slide">
+                <p>
+                  「今まで投資は怖いものだと思っていましたが、先生のお話を聞いて、自分でも安心してできる方法があることを知りました。」（５０代：女性）
+                </p>
+              </div>
+              <div class="testimonial-slide">
+                <p>
+                  「今使えるお金の範囲が理解でき安心できました。」（４０代：女性）
+                </p>
+              </div>
+              <div class="testimonial-slide">
+                <p>
+                  「今からできる資産運用の方法が理解できました。」（５０代：女性）
+                </p>
+              </div>
+              <div class="testimonial-slide">
+                <p>「個別相談でライフプランニングをしてもらい、夫婦で自分たち家族の未来像について初めて話し合うきっかけとなりました。」（３０代：ご夫婦での参加）</p>
+              </div>
+              <div class="testimonial-slide">
+                <p>「周りではNISAなど始める人が増えたが、自分は年齢が年齢なのでスタートすべきか不安があった。年齢や状況に合わせたリスクの選び方について教えてもらえた。おかげで自分にも安心なお金の預け先が見つかってうれしい。」（７０代：女性）</p>
+              </div>
+              <div class="testimonial-slide">
+                <p>「先生の話を聞いて、うちの子供や孫に生前贈与をスタートしたいと思った。具体的な方法も教えてもらえて安心できた。」（７０代：ご夫婦で参加）</p>
+              </div>
+            </div>
+          </div>
+          <div class="slider-controls">
+            <button class="slider-btn" id="prev-btn" aria-label="前へ">
+              &#8249;
+            </button>
+            <div class="slider-dots" id="slider-dots"></div>
+            <button class="slider-btn" id="next-btn" aria-label="次へ">
+              &#8250;
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- セミナーの特徴 -->
+      <section id="features">
+        <h2 class="animate-on-scroll">このセミナーの特徴</h2>
+        <div class="card animate-on-scroll" style="background: #fdfaf0; margin-bottom: 40px">
+          <h3 style="text-align: center;
+
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: clamp(5px, 4vw, 30px);
+            "
+          margin-bottom: 25px">セミナーの内容</h3>
+          <ul
+            style="
+              columns: 2;
+              list-style-type: &quot;✔&quot;;
+              padding-left: 20px;
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: clamp(5px, 2.2vw, 22px);
+            ">
+            <li style="margin-bottom: 10px">
+              絶対間違えちゃダメ！資産運用の正しい始め方
+            </li>
+            <li style="margin-bottom: 10px">
+              知らないとまずいNISAの3つのポイント
+            </li>
+            <li style="margin-bottom: 10px">
+              「年齢、状況別」自分に最適な資産運用方法は？
+            </li>
+            <li style="margin-bottom: 10px">
+              資産運用は「大きく勝つ」と「負けない」の使い分け！
+            </li>
+            <li style="margin-bottom: 10px">
+              毎年、利子を受け取り、趣味など人生を楽しむ方法
+            </li>
+            <li style="margin-bottom: 10px">教育費をお得に準備する裏技</li>
+          </ul>
+          <p style="text-align: right;  color: #888">
+            など、他にも多数ご紹介します
+          </p>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-item animate-on-scroll">
+            <div style="font-size: 4rem; margin-bottom: 5px">🎟️</div>
+            <h3>参加費無料</h3>
+            <p style="font-size: clamp(15px, 5.0vw, 20px);">どなたでも参加いただけます。</p>
+          </div>
+          <div class="feature-item animate-on-scroll">
+            <div style="font-size: 4rem; margin-bottom: 5px">💬</div>
+            <h3>個別相談無料</h3>
+            <p style="font-size: clamp(15px, 5.0vw, 20px);">セミナー後のフォローアップも安心です。</p>
+          </div>
+          <div class="feature-item animate-on-scroll">
+            <div style="font-size: 4rem; margin-bottom: 5px">🛡️</div>
+            <h3>勧誘等無し</h3>
+            <p style="font-size: clamp(15px, 5.0vw, 20px);">学びの場として安心してご参加ください。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 講師紹介 -->
+      <section id="instructor">
+        <h2 class="animate-on-scroll">講師紹介</h2>
+        <div class="card animate-on-scroll">
+          <div class="instructor-profile">
+            <img
+              src="https://github.com/YoshizakiLCS/-/blob/main/Ishikawa_01%E2%98%86.jpeg?raw=true"
+              alt="石川直人"
+              class="instructor-img animate-on-scroll from-left"
+            />
+            <div style="flex: 1" class="animate-on-scroll from-right">
+              <h3 style="font-size: clamp(10px, 5.0vw, 40px); margin-bottom: 5px">
+                石川 直人
+                <span style="font-size: 1.3rem; color: #777">Naoto Ishikawa</span>
+              </h3>
+              <p
+                style="
+                  color: var(--secondary-color);
+                  font-weight: bold;
+                  margin-bottom: 20px;
+                  font-size: clamp(16px, 5.0vw, 23px); margin-bottom: 25px;"
+                "
+              >
+                クリイト株式会社 
+                <br>横浜支店所属
+              </p>
+              <p             
+                    style="
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: clamp(7px, 5vw, 30px);">
+                <strong>モットー：</strong
+                >「より良く生きるを応援する！今と未来両方の楽しむ、欲張り人生を！」
+              </p>
+              <p           
+                    style="
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: clamp(5px, 4vw, 25px);
+            ">
+                <strong>経歴：</strong
+                >学校卒業後、洋菓子舗で営業職として10年以上勤務。元から資産運用などに興味があり、お金についてしっかりと学びたいと思っていたため、洋菓子舗に在職中に独学でFP資格を取得。学んでいるうちに「日本の金融教育の遅れ具合」に気づき、「お金で損している人をなくしたい」と思うようなり、35歳の時に転職を決意し、FPとして外資系金融機関に入社。
+              </p>
+              <p            
+                    style="
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: clamp(5px, 4vw, 25px);
+            ">
+                これまで14年間で2000世帯以上の家族相談を実施。企業や自治体などからのマネーセミナーの講演依頼も多数。豊富な実務経験に基づいたアドバイスに定評あり。単なる資産形成のテクニックだけでなく、「よりよく生きる」ための人生設計（ライフプラン）の構築をしてくれる点が好評なFPです。
+              </p>
+              <div style="margin: 20px 0">
+                <button class="btn" onclick="openProfile()" style="cursor: pointer;">
+                  詳しいプロフィールを見る
+                </button>
+              </div>
+              <div id="qualifications-area">
+                <p><strong style="
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: clamp(5px, 4vw, 25px);
+            ">保有資格：</strong></p>
+                <ul
+                  style="
+                    background: #f9f9f9;
+                    padding: 20px;
+                    border-radius: 10px;
+                    list-style: none;
+                  "
+                >
+                  <li style="margin-bottom: 10px">
+                    <strong             
+                    style="
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: clamp(5px, 4vw, 22px);
+            ">AFP（Affiliated Financial Planner）：</strong
+                    >日本FP協会が認定する、高い倫理観と実務能力を兼ね備えたFPの証です。
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    <strong             
+                    style="
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: clamp(5px, 4vw, 25px);
+            ">二種外務員資格：</strong
+                    >日本証券業協会が認定する、有価証券の売買等の勧誘を行うために必要な資格です。
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    <strong             
+                    style="
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: clamp(5px, 4vw, 25px);
+            ">相続診断士：</strong
+                    >相続に関する正しい知識を持ち、円満な相続を支援する専門家です。
+                  </li>
+                  <li style="margin-bottom: 10px">
+                    <strong             
+                    style="
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: clamp(5px, 4vw, 25px);
+            ">公的保険アドバイザー：</strong
+                    >社会保険制度を熟知し、公的保障を踏まえたライフプランニングを実施します。
+                  </li>
+                  <li>
+                    <strong             
+                    style="
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: clamp(5px, 4vw, 25px);
+            ">2026年度MDRT成績資格会員：</strong
+                    >世界中の生命保険・金融サービス専門職のトップクラスのメンバーで構成される組織の会員です。
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- 開催日程・会場 -->
+      <section id="schedule">
+        <h2 class="animate-on-scroll">開催日程・会場</h2>
+        <div class="spreadsheet-container">
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vSCQeepH9WPdZMX9NDLfEu-XIXTbQPAQUsRHsufC9w5-gcp_GGlwBNqWuihBY_-EyUCrWEM3gneNWzz/pubhtml?gid=1846650101&amp;single=true&amp;widget=true&amp;headers=false"></iframe>        </div>
+
+            
+<div class="container">
+    <div class="address-list">
+        <!-- 住所 1 -->
+        <div class="address-item">
+            <button class="btn" onclick="showMap('神奈川県鎌倉市大船1-12-10')">【大船】NEKTON OFUNA・神奈川県鎌倉市大船1-12-10</button>
+        </div>
+
+        <!-- 住所 2 -->
+        <div class="address-item">
+            <button class="btn" onclick="showMap('神奈川県藤沢市藤沢607－1')">【藤沢】藤沢商工会館・神奈川県藤沢市藤沢607－1</button>
+        </div>
+
+        <!-- 住所 3 -->
+        <div class="address-item">
+        <button class="btn" onclick="showMap('横浜市港南区上大岡西1‐6－1')">【上大岡】ウィリング横浜・横浜市港南区上大岡西1‐6－1</button>
+        </div>
+
+        <!-- 住所 4 -->
+        <div class="address-item">
+            <button class="btn" onclick="showMap('横浜市西区高島2－18－1')">【横浜A】そごう横浜店9階・横浜市西区高島2－18－1</button>
+        </div>
+    </div>
+</div>
+
+<!-- 地図表示用モーダル -->
+<div id="map-modal">
+    <div class="modal-content" id="map-container">
+        <!-- ここにGoogle Mapsのiframeが挿入されます -->
+    </div>
+    <button class="close-button" onclick="closeMap()">地図を閉じる</button>
+</div>
+
+          <div
+            style="
+              background: #fff5f0;
+              padding: 20px;
+              border-radius: 15px;
+              margin-bottom: 30px;
+              border: 1px solid #ffccbc;
+            "
+          >
+            <p style="margin: 0; font-size: clamp(15px, 5.0vw, 25px); color: #d35400; font-weight: bold">
+              【重要なお知らせ】
+            </p>
+            <ul
+              style="margin: 10px 0 0; padding-left: 20px; font-size: clamp(15px, 2.0vw, 22px);"
+            >
+              <li>
+                詳細はお申込みいただいた方に個別にメールで送らせていただきます。
+              </li>
+              <li>
+                定員が埋まり次第申し込みを締め切らせていただく場合がございます。
+              </li>
+              <li>
+                定員前でも、開催2日前には申し込みを締め切りさせていただきます。
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- よくある質問（アコーディオン） -->
+      <section id="faq" class="backgroundKAZOKU">
+        <div>
+        <h2 class="animate-on-scroll">よくあるご質問</h2>
+
+        <div class="faq-item animate-on-scroll">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Ｑ、参加される方の性別や年齢は？</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              A、20代～70代まで色んな世代の方がご参加くださります。1番多いのは40～60代の女性の参加者様です。次いで、ご夫婦で、ご友人とのご参加、といった感じです。男女比でいいますと、男性2、女性8といったところです。
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item animate-on-scroll">
+          <div class="faq-question" onclick="toggleFaq(this)">
+            <span>Ｑ、セミナーを申し込んだ後の流れは？</span>
+            <span class="faq-icon">+</span>
+          </div>
+          <div class="faq-answer">
+            <p>
+              A、お申し込み後、ご登録いただいたメールアドレスに自動返信メールが届きます。その後、2営業日以内に運営事務局担当から詳細等をメールでご案内させていただきます。また、セミナーにご参加いただいた後に希望される方には個別相談も承っております。（通常、90分11,000円のところ参加者特典で無料）その際は、JR関内駅にある弊社オフィスまたはオンラインにて対応させていただきます。
+            </p>
+          </div>
+        </div>
+
+        <div
+                      style="
+              margin-top: 40px;
+              font-weight: bold;
+              font-size: clamp(5px, 3vw, 20px);
+            "
+          style="background: #fff5f0; border-color: #ffccbc">
+          <h3>注意事項</h3>
+          <p>
+            本セミナーにご参加いただけるのは20歳以上のお金に関して学びたい方のみとなります。また、以下のような方は参加をご遠慮ください。
+          </p>
+          <ul>
+            <li>同業他社の方、金融業関連の方、セミナー情報の取得目的の方など</li>
+            <li>明らかに学び目的ではないと判断される方</li>
+            <li>その他主催側が適切でないと判断した方</li>
+          </ul>
+        </div>
+        </div>
+      </section>
+
+      <!-- 1番大切なこと -->
+      <section id="important">
+        <h2 class="animate-on-scroll">1番大切なこと</h2>
+        <div
+          class="card animate-on-scroll"
+          style="text-align: center; border: none "
+        >
+          <p style=" font-size: clamp(15px, 3.0vw, 30px); margin-bottom: 40px">
+            学んだだけでは人生は何も変化が起きません。<br />「初心者のためのマネーセミナー」では、実際に改善を起こすサポートとして無料個別相談もご用意しています。
+          </p>
+          <div class="important-grid">
+            <div class="important-item item-lifeplan animate-on-scroll">
+              <strong>ライフプラン作成</strong><br /><small
+                >今後の収支や必要なお金を確認</small
+              >
+            </div>
+            <div class="important-item item-investment animate-on-scroll">
+              <strong>自分に合った資産運用</strong><br /><small
+                >リスク許容度に合わせたスタート</small
+              >
+            </div>
+            <div class="important-item item-inheritance animate-on-scroll">
+              <strong>相続・生前贈与</strong><br /><small
+                >家族のためにできる事を確認</small
+              >
+            </div>
+            <div class="important-item item-mortgage animate-on-scroll">
+              <strong>住宅ローン</strong><br /><small
+                >借換えや繰上の最適解を提案</small
+              >
+            </div>
+            <div class="important-item item-education animate-on-scroll">
+              <strong>教育資金準備</strong><br /><small
+                >効率的な準備の仕方をアドバイス</small
+              >
+            </div>
+            <div class="important-item item-bond animate-on-scroll">
+              <strong>債券活用</strong><br /><small
+                >リスクの少ない運用として人気</small
+              >
+            </div>
+          </div>
+          <p
+            style="
+              margin-top: 40px;
+              font-weight: bold;
+              color: var(--secondary-color);
+              font-size: clamp(5px, 4vw, 35px);
+            "
+          >
+            その他、ご相談内容に応じて幅広く対応します。
+          </p>
+          <p             
+              style="
+              margin-top: 40px;
+
+              font-size: clamp(5px, 4vw, 25px);
+            ">
+            個別相談ご希望の方は、セミナー参加時に会場にてお申込みください。
+          </p>
+        </div>
+      </section>
+
+      <!-- お問い合わせ・お申込み -->
+      <section id="contact">
+        <h2 class="animate-on-scroll">お問い合わせ・お申込み</h2>
+
+        <div style="text-align: center; margin-top: 30px;">
+          <a
+            href="https://docs.google.com/forms/d/e/1FAIpQLSftSFtiFrNZKI2Glh1LoiX6L95nLePCTK5L9I9D0GKnyhQXGQ/viewform?usp=dialog"
+            target="_blank"
+            class="btn"
+          >
+            お申し込みフォームへ
+          </a>
+        </div>
+      </section>
+    </main>
+
+
+  
+    <footer>
+      <p>主催：ハッピーライフアカデミー / 共催：クリイト株式会社</p>
+      <p>
+        <a href="https://qreat.co.jp" target="_blank"
+          >クリイト株式会社ＨＰ（プライバシーポリシー等）</a
+        >
+      </p>
+      <p style="margin-top: 20px; font-size: 0.8rem; opacity: 0.7">
+        &copy; 2026 Japan Life Design Support Association. All rights reserved.
+      </p>
+    </footer>
+
+    <!-- モーダル -->
+    <div id="profileModal" class="modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <div id="modal-body"></div>
+      </div>
+    </div>
+
+    <!-- フローティングCTAボタン -->
+    <div id="cta-float">
+      <a href="#contact">📝 今すぐ申し込む</a>
+    </div>
+
+    <!-- ページトップボタン -->
+    <button
+      id="back-to-top"
+      onclick="scrollToTop()"
+      aria-label="ページトップへ"
+    >
+      ▲
+    </button>
+
+    <script src="script.js"></script>
+  </body>
+</html>
